@@ -26,3 +26,6 @@
 - [ ] api documentation 
 - [ ] usage documentation
 - [ ] user flow documentation with screenshots
+- [ ] creating a logger library for logging node js application
+- [ ] creating a logger library for react application
+- [ ] creating a cdn JS that can be used in any JAVASCRIPT application
