@@ -3,7 +3,7 @@
 - [x] Setting up Mongo db database
 - [x] Setting up migration framework for mongo db
 - [x] Setting up react app
-- [ ] Setting up Unit test case framework node js
+- [x] Setting up Unit test case framework node js
 - [ ] Setting up Integration test case framework  node js
 - [ ] Setting up redux store
 - [ ] Setting up unit test case react

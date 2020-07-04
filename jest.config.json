@@ -7,7 +7,8 @@
       "rootDir": "server",
       "testEnvironment": "node",
       "coveragePathIgnorePatterns": [
-        "/node_modules/"
+        "/node_modules/",
+        "server/models"
       ]  
 
 }

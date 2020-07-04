@@ -3,8 +3,13 @@ Logging all the front end information in logger which will help you identify err
 
 
 # Installation process
+## Server app setup process
 - Clone this repo in your application
 - Go to JS-looger folder and run command `npm install` 
+- To execute server side test cases `npm run test`
+- To get server side test cases code coverage `npm run test:coverage`
+
+## Client app setup process
 - Go to client folder and run command  `npm install`
 
 your app is ready now just few more configurations to do.
