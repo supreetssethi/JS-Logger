@@ -4,9 +4,9 @@
 - [x] Setting up migration framework for mongo db
 - [x] Setting up react app
 - [x] Setting up Unit test case framework node js
+- [x] Setting up unit test case react
 - [ ] Setting up Integration test case framework  node js
 - [ ] Setting up redux store
-- [ ] Setting up unit test case react
 - [ ] Setting up integration test case react
 - [ ] Setting up documentation for react
 - [ ] Setting up documentation for exposing api to thirdparty
