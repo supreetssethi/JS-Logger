@@ -1,5 +1,5 @@
 - [x] Setting up express app
-- [ ] Setting up sub - domains
+- [x] Setting up sub - domains
 - [ ] Setting up Unit test case framework node js
 - [ ] Setting up Mongo db database
 - [ ] Setting up migration framework for mongo db
