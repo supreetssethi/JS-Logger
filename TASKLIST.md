@@ -30,3 +30,7 @@
 - [ ] creating a logger library for react application
 - [ ] creating a cdn JS that can be used in any JAVASCRIPT application
 - [ ] figuring out a way to setup logger on local host
+- [ ] minify html in react app
+- [ ] minify js in react app
+- [ ] minify css in react app
+- [ ] check light house score and improve
