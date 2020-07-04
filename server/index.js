@@ -1,4 +1,7 @@
 const express = require("express");
+const bodyParser = require("body-parser");
+const mongoose = require("mongoose");
+
 module.exports = function () {
   let server = express(),
     create,
@@ -11,8 +14,17 @@ module.exports = function () {
     server.set("env", config.env);
     server.set("port", config.port);
     server.set("hostname", config.hostname);
+    server.set("db", config.db);
     server.set("viewDir", config.viewDir);
 
+    //connect to the database
+    mongoose
+      .connect(server.get("db"), { useNewUrlParser: true })
+      .then(() => console.log(`Database connected successfully`))
+      .catch((err) => console.log(err));
+
+    //since mongoose promise is depreciated, we overide it with node's promise
+    mongoose.Promise = global.Promise;
     // Returns middleware that parses json
     // server.use(bodyParser.json());
 
@@ -26,6 +38,12 @@ module.exports = function () {
     // server.set('view engine', '.hbs');
 
     // Set up routes
+
+    server.use(bodyParser.json());
+    server.use((err, req, res, next) => {
+      console.log(err);
+      next();
+    });
     routes.init(server);
   };
 
