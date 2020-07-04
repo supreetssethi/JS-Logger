@@ -1,14 +1,12 @@
 {
     "bail":true,
     "displayName": {
-        "name": "Server",
+        "name": "CLIENT",
         "color": "blue"
       },
-      "rootDir": "server",
-      "testEnvironment": "node",
+      "rootDir": "./",
       "coveragePathIgnorePatterns": [
-        "/node_modules/",
-        "server/models"
+        "/node_modules/"
       ],
       "coverageReporters": ["text","html"]
 
