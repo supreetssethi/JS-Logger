@@ -9,6 +9,7 @@
       "coveragePathIgnorePatterns": [
         "/node_modules/",
         "server/models"
-      ]  
+      ],
+      "coverageReporters": ["text","html"]
 
 }
