@@ -1,0 +1,13 @@
+{
+    "bail":true,
+    "displayName": {
+        "name": "CLIENT",
+        "color": "blue"
+      },
+      "rootDir": "server",
+      "testEnvironment": "node",
+      "coveragePathIgnorePatterns": [
+        "/node_modules/"
+      ]  
+
+}
