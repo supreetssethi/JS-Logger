@@ -7,12 +7,12 @@ const Log = require('../../models/log');
 
 
 router.get("/", function (req, res,next) {
-    Log.find({}, 'log')
+    Log.find({}, 'data')
     .then(data => res.json(data))
     .catch(next)
 });
 router.post("/", function (req, res,next) {
-    if(req.body.log){
+    if(req.body.data){
         Log.create(req.body)
           .then(data => res.json(data))
           .catch(next)

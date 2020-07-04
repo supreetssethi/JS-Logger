@@ -3,13 +3,13 @@ const Schema = mongoose.Schema;
 
 //create schema for log
 const LogSchema = new Schema({
-  logData: {
+  data: {
     type: String,
-    required: [true, 'The log text field is required']
+    required: [true, 'The log data field is required']
   }
 })
 
 //create model for log
-const Log = mongoose.model('log', LogSchema);
+const Log = mongoose.model('logs', LogSchema);
 
 module.exports = Log;

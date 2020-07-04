@@ -7,10 +7,8 @@
     "start": "node index.js",
     "start-watch": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-
     "dev": "concurrently \"npm run start-watch\" \"cd client && npm run start\"",
-    
-    "migrate-mongo" : "cd server && migrate-mongo",
+    "migrate-mongo": "cd server && migrate-mongo",
     "migrate_down": "cd server && migrate-mongo down",
     "migrate_up": "cd server && migrate-mongo up",
     "migrate_status": "cd server && migrate-mongo status"
