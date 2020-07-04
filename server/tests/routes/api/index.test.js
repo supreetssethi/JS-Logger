@@ -1,13 +1,10 @@
 // const request = require("supertest");
-const server = require("../")(),
-  serverConfig = require("../../configs");
+const server = require("../../../")(),
+  serverConfig = require("../../../../configs");
 
 var request = require("request");
 
 var responses = {
-  main: {
-    "/": "Simple example homepage!",
-  },
   api: {
     "/": { isSuccess: true, data: "This is api base" },
     "/isAlive": { isSuccess: true },
