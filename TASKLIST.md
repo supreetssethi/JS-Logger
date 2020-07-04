@@ -21,4 +21,8 @@
 - [ ] Health checkup for node app
 - [ ] If some major api breaks from front end there should be a logic to check health checkup of backend and give a application down page with retrt option
 - [ ] application should have responsive design
-- [ ] offline first support
+- [ ] offline first support (PWA recommended)
+- [ ] react documentation
+- [ ] api documentation 
+- [ ] usage documentation
+- [ ] user flow documentation with screenshots
