@@ -4,6 +4,7 @@
   "description": "Logging all the front end information in logger which will help you identify error or bugs on production site",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,6 +19,8 @@
   },
   "homepage": "https://github.com/supreetssethi/JS-Logger#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "express-subdomain": "^1.0.5",
+    "lodash": "^4.17.15"
   }
 }
