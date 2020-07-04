@@ -25,4 +25,10 @@ Need to finish basic [Task list](TASKLIST.md)
 
 
 
-
+# Migrations
+Commands related to migratios
+- `npm run migrate_status` to check status of all the migrations
+- `npm run migrate_up` to migrate up
+- `npm run migrate_down` to migrate down
+- `npm run migrate-mongo {}` to run any migrate-mongo command 
+eg :  `npm run migrate-mongo create users` for create user migration
