@@ -14,12 +14,14 @@ module.exports = function () {
     server.set("env", config.env);
     server.set("port", config.port);
     server.set("hostname", config.hostname);
-    server.set("db", config.db);
+    server.set("mongodb", config.mongodb);
     server.set("viewDir", config.viewDir);
 
     //connect to the database
+    let mongoDbConfig = server.get("mongodb");
+    let mongoDbConnectionString = `${mongoDbConfig.url}/${mongoDbConfig.databaseName}?retryWrites=true&w=majority`;
     mongoose
-      .connect(server.get("db"), { useNewUrlParser: true })
+      .connect(mongoDbConnectionString, { useNewUrlParser: true })
       .then(() => console.log(`Database connected successfully`))
       .catch((err) => console.log(err));
 
