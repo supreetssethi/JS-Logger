@@ -17,6 +17,7 @@ module.exports = function () {
     server.set("hostname", config.hostname);
     server.set("mongodb", config.mongodb);
     server.set("viewDir", config.viewDir);
+    server.set("urls", config.urls);
 
     // Returns middleware that parses json
     // server.use(bodyParser.json());

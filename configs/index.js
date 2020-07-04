@@ -4,6 +4,11 @@ const _ = require("lodash"),
 
 let defaultConfig = {
   env: env,
+  urls: {
+    API_SUBDOMAIN: "api",
+    BASE: "logger.com",
+    HOSTNAME: "api.logger.com",
+  }
 };
 
 module.exports = _.merge(defaultConfig, envConfig);
