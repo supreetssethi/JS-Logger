@@ -1,10 +1,10 @@
 - [x] Setting up express app
 - [x] Setting up sub - domains
-- [ ] Setting up Unit test case framework node js
 - [x] Setting up Mongo db database
 - [x] Setting up migration framework for mongo db
-- [ ] Setting up Integration test case framework  node js
 - [x] Setting up react app
+- [ ] Setting up Unit test case framework node js
+- [ ] Setting up Integration test case framework  node js
 - [ ] Setting up redux store
 - [ ] Setting up unit test case react
 - [ ] Setting up integration test case react
@@ -29,3 +29,4 @@
 - [ ] creating a logger library for logging node js application
 - [ ] creating a logger library for react application
 - [ ] creating a cdn JS that can be used in any JAVASCRIPT application
+- [ ] figuring out a way to setup logger on local host
