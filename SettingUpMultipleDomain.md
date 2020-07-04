@@ -14,4 +14,6 @@ If you are on windows server you might need to add your domains to host file
 ::1 logger.com
 127.0.0.1 api.logger.com
 ::1 api.logger.com
+127.0.0.1 app.logger.com
+::1 app.logger.com
 `
