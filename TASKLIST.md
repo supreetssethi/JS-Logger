@@ -2,7 +2,7 @@
 - [x] Setting up sub - domains
 - [ ] Setting up Unit test case framework node js
 - [x] Setting up Mongo db database
-- [ ] Setting up migration framework for mongo db
+- [x] Setting up migration framework for mongo db
 - [ ] Setting up Integration test case framework  node js
 - [x] Setting up react app
 - [ ] Setting up redux store
@@ -18,3 +18,5 @@
 - [ ] Preetfier and linting rules for node
 - [ ] Preetfier and linting rules for react
 - [ ] Setting up app auth mechanism (JWT preferred) 
+- [ ] Health checkup for node app
+- [ ] If some major api breaks from front end there should be a logic to check health checkup of backend and give a application down page with retrt option
