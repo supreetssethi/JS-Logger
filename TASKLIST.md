@@ -1,0 +1,17 @@
+- [x] Setting up express app
+- [ ] Setting up sub - domains
+- [ ] Setting up Unit test case framework node js
+- [ ] Setting up Mongo db database
+- [ ] Setting up migration framework for mongo db
+- [ ] Setting up Integration test case framework  node js
+- [ ] Setting up react app
+- [ ] Setting up redux store
+- [ ] Setting up unit test case react
+- [ ] Setting up integration test case react
+- [ ] Setting up documentation for react
+- [ ] Setting up documentation for exposing api to thirdparty
+- [ ] Setting up documentation for internal api
+- [ ] Setting up a unique key for client to use application (paid)
+- [ ] Setting up a sandbox environment for testing (1 month free without key) ( free for paid user with key)
+- [ ] Setting up react app to use out internal application
+- [ ] Setting up a single line JS file usage which can directly be imported in any project to use our logger.
