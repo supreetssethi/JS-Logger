@@ -17,3 +17,4 @@
 - [ ] Setting up a single line JS file usage which can directly be imported in any project to use our logger.
 - [ ] Preetfier and linting rules for node
 - [ ] Preetfier and linting rules for react
+- [ ] Setting up app auth mechanism (JWT preferred) 
