@@ -1,3 +1,5 @@
+import crypto from "crypto";
+
 let hashCommonPropertiesToIgnore = [
   "metaData",
   "hash",
@@ -9,10 +11,12 @@ let allErrors = new Map();
 
 class Log {
   static getLogCount() {
+    return allErrors.size;
+  }
+  static getLogData() {
     return allErrors;
   }
   static pushError(log) {
-      debugger;
     if (!allErrors.has(log.hash)) {
       allErrors.set(log.hash, log);
     } else {
@@ -42,18 +46,12 @@ class Log {
     Log.pushError(this);
   }
   generateHash(hashPrivatePropertiesToIgnore) {
-    let hash = 0;
     let tmpObject = { ...this };
     for (let i = 0; i < hashPrivatePropertiesToIgnore.length; i++) {
       delete tmpObject[hashPrivatePropertiesToIgnore[i]];
     }
-    let jsonString = tmpObject.toString();
-    for (let i = 0; i < jsonString.length; i++) {
-      let char = jsonString.charCodeAt(i);
-      hash = (hash << 4) - hash + char;
-      hash = hash & hash;
-    }
-    return hash;
+    let jsonString = JSON.stringify(tmpObject);
+    return crypto.createHash("MD5").update(jsonString).digest("hex");
   }
   getMetaData() {
     return {

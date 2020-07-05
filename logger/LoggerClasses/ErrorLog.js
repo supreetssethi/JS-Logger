@@ -10,7 +10,7 @@ class ErrorLog extends Log {
       stack: error && error.stack,
       errorName: error && error.name,
     };
-    super({type:"error", data});
+    super({ type: "ERROR", data });
   }
 }
 
