@@ -7,7 +7,6 @@ var request = require("request");
 var responses = {
   api: {
     "/": { isSuccess: true, data: "This is api base" },
-    "/isAlive": { isSuccess: true },
   },
 };
 describe("Test api endpoint", () => {
@@ -30,24 +29,6 @@ describe("Test api endpoint", () => {
       );
     }
   );
-
-  it(
-    "GET " + serverConfig.urls.HOSTNAME + ":" + serverConfig.port + "/isAlive",
-    function (done) {
-      request(
-        "http://" +
-          serverConfig.urls.HOSTNAME +
-          ":" +
-          serverConfig.port +
-          "/isAlive",
-        function (error, res, body) {
-          expect(body).toEqual(JSON.stringify(responses.api["/isAlive"]));
-          done();
-        }
-      );
-    }
-  );
-
   afterAll(function (done) {
     server.close(() => {
       console.log("\x1b[36m%s\x1b[0m", "♻ server recycled");

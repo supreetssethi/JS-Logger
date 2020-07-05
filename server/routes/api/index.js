@@ -11,14 +11,7 @@ router.get("/", function (req, res) {
     data: "This is api base",
   });
 });
-router.get("/isAlive", function (req, res) {
-  res.json({
-    isSuccess: true,
-  });
-});
-router.get("/info", function (req, res) {
-  res.send("api info");
-});
+
 router.use("/log", logRouter);
 router.use("/health", healthcheckRouter);
 router.get("*", function (req, res, next) {
