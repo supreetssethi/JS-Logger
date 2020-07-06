@@ -17,6 +17,14 @@
     "lint:fix": "eslint ./server --fix",
     "prettier:fix": "prettier ./server --write"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/server/*.{js,json}": ["npm run prettier:fix", "npm run lint:fix", "git add"]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/supreetssethi/JS-Logger.git"
@@ -48,7 +56,9 @@
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^4.2.5",
     "jest": "^26.1.0",
+    "lint-staged": "^10.2.11",
     "node-fetch": "^2.6.0",
     "nodemon": "^2.0.4",
     "prettier": "^2.0.5"
