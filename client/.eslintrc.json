@@ -1,0 +1,27 @@
+{
+    "env": {
+        "browser": true,
+        "es2020": true,
+        "es6": true,
+        "jest": true
+    },
+    "extends": [
+        "plugin:react/recommended",
+        "airbnb", "prettier"
+    ],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 11,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react", "prettier"
+    ],
+    "rules": {
+        "semi": ["error", "always"],
+        "quotes": ["error", "double"],
+        "prettier/prettier": "error"
+    }
+}
