@@ -10,10 +10,10 @@ const {
 const config = {
   mongodb: {
     // TODO Change (or review) the url to your MongoDB:
-    url: url,
+    url,
 
     // TODO Change this to your database name:
-    databaseName: databaseName,
+    databaseName,
 
     options: {
       useNewUrlParser: true, // removes a deprecation warning when connecting
@@ -24,10 +24,10 @@ const config = {
   },
 
   // The migrations dir, can be an relative or absolute path. Only edit this when really necessary.
-  migrationsDir: migrationsDir,
+  migrationsDir,
 
   // The mongodb collection where the applied changes are stored. Only edit this when really necessary.
-  changelogCollectionName: changelogCollectionName,
+  changelogCollectionName,
 
   // The file extension to create migrations and search for in migration dir
   migrationFileExtension: ".js",

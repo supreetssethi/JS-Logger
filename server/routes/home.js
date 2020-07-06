@@ -1,16 +1,11 @@
-"use strict";
-
 const express = require("express");
 
-let router = express.Router();
+const router = express.Router();
 
-// router.get('/', homeController.index);
-// router.get('/info', homeController.info);
-
-router.get("/", function (req, res) {
+router.get("/", (req, res) => {
   res.send("home base");
 });
-router.get("/info", function (req, res) {
+router.get("/info", (req, res) => {
   res.send("home info");
 });
 

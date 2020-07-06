@@ -1,25 +1,20 @@
-"use strict";
-
 const express = require("express");
-let logRouter = require("./log");
-let router = express.Router();
+const logRouter = require("./log");
+const healthcheckRouter = require("./healthcheck");
 
-router.get("/", function (req, res) {
+const router = express.Router();
+
+router.get("/", (req, res) => {
   res.json({
     isSuccess: true,
     data: "This is api base",
   });
 });
-router.get("/isAlive", function (req, res) {
-  res.json({
-    isSuccess: true,
-  });
-});
-router.get("/info", function (req, res) {
-  res.send("api info");
-});
+
 router.use("/log", logRouter);
+router.use("/health", healthcheckRouter);
 router.get("*", function (req, res, next) {
   res.status(404).send("ERROR");
+  return next();
 });
 module.exports = router;
