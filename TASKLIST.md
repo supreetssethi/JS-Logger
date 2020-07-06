@@ -5,6 +5,8 @@
 - [x] Setting up react app
 - [x] Setting up Unit test case framework node js
 - [x] Setting up unit test case react
+- [ ] Node api doc generator
+- [ ] Create error documentation model that will be stored in db
 - [ ] Setting up Integration test case framework  node js
 - [ ] Setting up redux store
 - [ ] Setting up integration test case react
@@ -18,7 +20,7 @@
 - [ ] Preetfier and linting rules for node
 - [ ] Preetfier and linting rules for react
 - [ ] Setting up app auth mechanism (JWT preferred) 
-- [ ] Health checkup for node app
+- [x] Health checkup for node app
 - [ ] If some major api breaks from front end there should be a logic to check health checkup of backend and give a application down page with retrt option
 - [ ] application should have responsive design
 - [ ] offline first support (PWA recommended)
@@ -34,3 +36,4 @@
 - [ ] minify js in react app
 - [ ] minify css in react app
 - [ ] check light house score and improve
+- [ ] continuous health checkup

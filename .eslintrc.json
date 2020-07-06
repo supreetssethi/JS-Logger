@@ -17,7 +17,6 @@
     "rules": {
         "semi": ["error", "always"],
         "quotes": ["error", "double"],
-        "prettier/prettier": "error",
-        "linebreak-style": ["windows"]
+        "prettier/prettier": "error"
     }
 }

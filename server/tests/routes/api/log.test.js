@@ -13,7 +13,7 @@ describe("Testing log api end point", () => {
 
   it(`GET ${serverConfig.urls.HOSTNAME}:${serverConfig.port}/log/`, async (done) => {
     const res = await fetch(
-      `http://${serverConfig.urls.HOSTNAME}:${serverConfig.port}/log/`
+      `http://${serverConfig.urls.HOSTNAME}:${serverConfig.port}/log/`,
     );
     const json = await res.json();
     expect(res.status).toEqual(200);
@@ -31,7 +31,7 @@ describe("Testing log api end point", () => {
         method: "POST",
         body: JSON.stringify(body),
         headers: { "Content-Type": "application/json" },
-      }
+      },
     );
     const json = await res.json();
     expect(res.status).toEqual(201);
