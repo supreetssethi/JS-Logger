@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const router = express.Router({});
 
 router.get("/", async (req, res) => {
-  let healthcheck = {};
+  const healthcheck = {};
   try {
     // checking server uptime and basic data
     healthcheck.dbState = mongoose.STATES[mongoose.connection.readyState];

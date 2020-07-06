@@ -1,7 +1,8 @@
 const express = require("express");
-let logRouter = require("./log");
-let healthcheckRouter = require("./healthcheck");
-let router = express.Router();
+const logRouter = require("./log");
+const healthcheckRouter = require("./healthcheck");
+
+const router = express.Router();
 
 router.get("/", (req, res) => {
   res.json({
