@@ -1,6 +1,6 @@
 module.exports = {
-  async up(db, client) {
-    return await db.createCollection("users", {
+  async up(db) {
+    return db.createCollection("users", {
       validator: {
         $jsonSchema: {
           bsonType: "object",
@@ -24,7 +24,7 @@ module.exports = {
     });
   },
 
-  async down(db, client) {
-    return await db.collection("users").drop();
+  async down(db) {
+    return db.collection("users").drop();
   },
 };
