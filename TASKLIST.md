@@ -5,6 +5,9 @@
 - [x] Setting up react app
 - [x] Setting up Unit test case framework node js
 - [x] Setting up unit test case react
+- [x] Preetfier and linting rules for node
+- [x] Preetfier and linting rules for react
+- [x] Health checkup for node app
 - [ ] Node api doc generator
 - [ ] Create error documentation model that will be stored in db
 - [ ] Setting up Integration test case framework node js
@@ -17,10 +20,7 @@
 - [ ] Setting up a sandbox environment for testing (1 month free without key) ( free for paid user with key)
 - [ ] Setting up react app to use out internal application
 - [ ] Setting up a single line JS file usage which can directly be imported in any project to use our logger.
-- [x] Preetfier and linting rules for node
-- [ ] Preetfier and linting rules for react
 - [ ] Setting up app auth mechanism (JWT preferred)
-- [x] Health checkup for node app
 - [ ] If some major api breaks from front end there should be a logic to check health checkup of backend and give a application down page with retrt option
 - [ ] application should have responsive design
 - [ ] offline first support (PWA recommended)
