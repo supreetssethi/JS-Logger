@@ -1,16 +1,15 @@
-// const request = require("supertest");
-const server = require("../../../")(),
-  serverConfig = require("../../../../configs");
+/* eslint-disable no-console */
+const request = require("request");
+const server = require("../../..")();
+const serverConfig = require("../../../../configs");
 
-var request = require("request");
-
-var responses = {
+const responses = {
   api: {
     "/": { isSuccess: true, data: "This is api base" },
   },
 };
 describe("Test api endpoint", () => {
-  beforeAll(function (done) {
+  beforeAll((done) => {
     server.create(serverConfig);
     server.start();
     console.log("\x1b[36m%s\x1b[0m", "♻ server started");
@@ -25,9 +24,9 @@ describe("Test api endpoint", () => {
         function (error, res, body) {
           expect(body).toEqual(JSON.stringify(responses.api["/"]));
           done();
-        }
+        },
       );
-    }
+    },
   );
   afterAll(function (done) {
     server.close(() => {

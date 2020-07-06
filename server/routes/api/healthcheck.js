@@ -3,15 +3,11 @@ const mongoose = require("mongoose");
 
 const router = express.Router({});
 
-router.get("/", async (_req, res, _next) => {
+router.get("/", async (req, res) => {
+  let healthcheck = {};
   try {
     // checking server uptime and basic data
-    let healthcheck = {
-      uptime: process.uptime(),
-      message: "UP",
-      timestamp: Date.now(),
-      dbState: mongoose.STATES[mongoose.connection.readyState],
-    };
+    healthcheck.dbState = mongoose.STATES[mongoose.connection.readyState];
     res.json({
       isSuccess: true,
       data: healthcheck,
