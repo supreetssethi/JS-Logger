@@ -12,7 +12,10 @@
     "migrate-mongo": "cd server && migrate-mongo",
     "migrate_down": "cd server && migrate-mongo down",
     "migrate_up": "cd server && migrate-mongo up",
-    "migrate_status": "cd server && migrate-mongo status"
+    "migrate_status": "cd server && migrate-mongo status",
+    "lint": "eslint ./server",
+    "lint:fix": "eslint ./server --fix",
+    "prettier:fix": "prettier ./server --write"
   },
   "repository": {
     "type": "git",
@@ -31,15 +34,23 @@
     "express-subdomain": "^1.0.5",
     "lodash": "^4.17.15",
     "migrate-mongo": "^7.2.1",
-    "mongoose": "^5.9.21"
+    "mongoose": "^5.9.21",
+    "request": "^2.88.2"
   },
   "devDependencies": {
     "@babel/core": "^7.10.4",
     "@babel/preset-env": "^7.10.4",
+    "babel-eslint": "^10.1.0",
     "babel-jest": "^26.1.0",
     "concurrently": "^5.2.0",
+    "eslint": "^7.4.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-prettier": "^3.1.4",
     "jest": "^26.1.0",
     "node-fetch": "^2.6.0",
-    "nodemon": "^2.0.4"
+    "nodemon": "^2.0.4",
+    "prettier": "^2.0.5"
   }
 }
