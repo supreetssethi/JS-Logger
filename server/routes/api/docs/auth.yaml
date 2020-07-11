@@ -1,0 +1,42 @@
+paths:
+  /auth/register:
+    post:
+      summary: Regsiter a new user
+      tags: # Tag property
+        - Auth # Value of the tag
+      name:
+        - Regsiter User
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: user
+          description: The user to create.
+          schema:
+            type: object
+            properties:
+              name: # <!--- form field name
+                type: string
+              username: # <!--- form field name
+                type: string
+              email: # <!--- form field name
+                type: string
+              password: # <!--- form field name
+                type: string
+            required:
+              - name
+              - email
+              - password
+      responses:
+        "201":
+          description: User registered successfully
+          # content:
+          #   application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: boolean
+              # username:
+              #   type: string
+              #   description: The user name.
