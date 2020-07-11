@@ -1,0 +1,22 @@
+paths:
+  /health: # path of the user from your endpoint
+    get: # endpoint request type (post request)
+      tags: # Tag property
+        - health checkup # Value of the tag
+      summary: check status of system resources
+      produces:
+        - application/json
+      responses:
+        "200":
+          description: Status of all the resources
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  isSuccess:
+                    type: bool
+                    description: status of api.
+                  data:
+                    type: object
+                    description: data of all resources.

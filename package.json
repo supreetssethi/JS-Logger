@@ -4,7 +4,7 @@
   "description": "Logging all the front end information in logger which will help you identify error or bugs on production site",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "nodemon index.js",
     "start-watch": "nodemon index.js",
     "test": "jest",
     "test:watch": "jest --runInBand",
@@ -24,7 +24,11 @@
     }
   },
   "lint-staged": {
-    "**/server/*.{js,json}": ["npm run prettier:fix", "npm run lint:fix", "git add"]
+    "**/server/*.{js,json}": [
+      "npm run prettier:fix",
+      "npm run lint:fix",
+      "git add"
+    ]
   },
   "repository": {
     "type": "git",
@@ -39,12 +43,15 @@
   "homepage": "https://github.com/supreetssethi/JS-Logger#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-subdomain": "^1.0.5",
     "lodash": "^4.17.15",
     "migrate-mongo": "^7.2.1",
     "mongoose": "^5.9.21",
-    "request": "^2.88.2"
+    "request": "^2.88.2",
+    "swagger-jsdoc": "^4.0.0",
+    "swagger-ui-express": "^4.1.4"
   },
   "devDependencies": {
     "@babel/core": "^7.10.4",
@@ -59,6 +66,7 @@
     "eslint-plugin-prettier": "^3.1.4",
     "husky": "^4.2.5",
     "jest": "^26.1.0",
+    "jsdoc": "^3.6.4",
     "lint-staged": "^10.2.11",
     "node-fetch": "^2.6.0",
     "nodemon": "^2.0.4",

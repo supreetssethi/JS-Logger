@@ -1,19 +1,24 @@
 const express = require("express");
+const cors = require("cors");
 const logRouter = require("./log");
 const healthcheckRouter = require("./healthcheck");
 
+const whitelist = ["http://logger.com:3000"];
+const corsOptionsDelegate = function corsOptionsDelegate(req, callback) {
+  let corsOptions;
+  if (whitelist.indexOf(req.header("Origin")) !== -1) {
+    corsOptions = { origin: true }; // reflect (enable) the requested origin in the CORS response
+  } else {
+    corsOptions = { origin: false }; // disable CORS for this request
+  }
+  callback(null, corsOptions);
+};
+
 const router = express.Router();
 
-router.get("/", (req, res) => {
-  res.json({
-    isSuccess: true,
-    data: "This is api base",
-  });
-});
-
-router.use("/log", logRouter);
-router.use("/health", healthcheckRouter);
-router.get("*", function (req, res, next) {
+router.use("/log", cors(corsOptionsDelegate), logRouter);
+router.use("/health", cors(corsOptionsDelegate), healthcheckRouter);
+router.get("*", function pageNotFound(req, res, next) {
   res.status(404).send("ERROR");
   return next();
 });
