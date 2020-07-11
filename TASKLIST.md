@@ -8,7 +8,7 @@
 - [x] Preetfier and linting rules for node
 - [x] Preetfier and linting rules for react
 - [x] Health checkup for node app
-- [ ] Node api doc generator
+- [x] Node api doc generator
 - [ ] Create error documentation model that will be stored in db
 - [ ] Setting up Integration test case framework node js
 - [ ] Setting up redux store
