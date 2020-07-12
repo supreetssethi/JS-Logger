@@ -42,9 +42,10 @@ exports.authorize = (...roles) => {
       return next(
         new ErrorResponse(
           `User with role ${res.user.role} is not authorized to access this route`,
-          401,
+          403,
         ),
       );
     }
+    next();
   };
 };
