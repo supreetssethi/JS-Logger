@@ -66,3 +66,17 @@ const sendTokenResponse = (user, statusCode, res) => {
     token,
   });
 };
+
+// @desc Get login user
+// @route GET /auth/me
+// @access Private
+exports.getMe = asyncHandler(async (req, res, next) => {
+  try {
+    //check for user
+    const user = await User.findById(req.user.id);
+
+    res.status(200).json({ success: false, data: user });
+  } catch (ex) {
+    res.status(500).json({ success: false, data: ex });
+  }
+});

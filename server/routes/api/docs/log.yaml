@@ -11,6 +11,9 @@ paths:
             application/json:
               schema: # Schema definition
               $ref: "#/definitions/LOGS"
+      security:
+        - bearerAuth: []
+
     post:
       summary: add a new log
       responses:

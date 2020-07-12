@@ -116,3 +116,62 @@ paths:
                 example: false
               token:
                 type: string
+  /auth/me:
+    get:
+      summary: Get logged inuser
+      tags: # Tag property
+        - Auth # Value of the tag
+      name:
+        - User details
+      produces:
+        - application/json
+      responses:
+        "200":
+          description: User logged in  successfully
+          schema:
+            type: object
+            properties:
+              success:
+                type: boolean
+              user:
+                properties:
+                  role:
+                    type: string
+                    example: "user"
+                  _id:
+                    type: "string"
+                    example: "5f0b3987ee305745c4e3766f"
+                  name:
+                    type: "string"
+                    example: "supreet sethi"
+                  username:
+                    type: "string"
+                    example: "suprit12"
+                  email:
+                    type: "string"
+                    example: "supreet.s.sethi@gmail.com"
+                  createdAt:
+                    type: "date"
+                    example: "2020-07-12T16:25:43.365Z"
+                  updatedAt:
+                    type: "date"
+                    example: "2020-07-12T16:25:43.365Z"
+          headers:
+            Set-Cookie:
+              schema:
+                type: string
+                example: token=abcde12345; Path=/; HttpOnly
+              description: cookie in response.
+        "500":
+          description: User logged in  successfully
+          schema:
+            type: object
+            properties:
+              success:
+                type: boolean
+                example: false
+              data:
+                type: string
+                example: "exception details"
+      security:
+        - bearerAuth: []

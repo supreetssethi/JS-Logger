@@ -4,13 +4,15 @@ const fs = require("fs");
 const router = express.Router();
 const Log = require("../../models/log");
 
+const { protect } = require("../../middleware/auth");
+
 function mergeCurrentDataWithFie(data, req) {
   const obj = JSON.parse(data);
   obj.push(req.body);
   return JSON.stringify(obj);
 }
 // eslint-disable-next-line no-console
-router.get("/", (req, res, next) => {
+router.get("/", protect, (req, res, next) => {
   Log.find({}, "data")
     .then((data) => res.json({ isSuccess: true, logs: data }))
     .catch(next);
