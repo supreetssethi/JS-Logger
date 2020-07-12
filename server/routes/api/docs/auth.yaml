@@ -44,6 +44,7 @@ paths:
             properties:
               success:
                 type: boolean
+                example: false
               data:
                 type: string
   /auth/login:
@@ -79,6 +80,12 @@ paths:
                 type: boolean
               token:
                 type: string
+          headers:
+            Set-Cookie:
+              schema:
+                type: string
+                example: token=abcde12345; Path=/; HttpOnly
+              description: cookie in response.
         "400":
           description: User logged in  successfully
           schema:
@@ -86,6 +93,7 @@ paths:
             properties:
               success:
                 type: boolean
+                example: false
               token:
                 type: string
         "401":
@@ -95,6 +103,7 @@ paths:
             properties:
               success:
                 type: boolean
+                example: false
               token:
                 type: string
         "500":
@@ -104,5 +113,6 @@ paths:
             properties:
               success:
                 type: boolean
+                example: false
               token:
                 type: string

@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+const cookieParser = require("cookie-parser");
 const routes = require("./routes");
 
 let appServer;
@@ -31,6 +32,9 @@ function createServer(config) {
 
   // Returns middleware that parses json
   server.use(bodyParser.json());
+
+  // use cookie parser
+  server.use(cookieParser());
 
   // Setup view engine
   // server.engine(".hbs", expressHandlebars({
