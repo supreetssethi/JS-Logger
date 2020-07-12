@@ -21,8 +21,11 @@ const handleErrors = (server) => {
   });
 };
 function init(server) {
+  const { urls } = server.get("config");
+
   server.use(cors());
-  server.use(subdomain(server.get("urls").API_SUBDOMAIN, apiRoute));
+
+  server.use(subdomain(urls.API_SUBDOMAIN, apiRoute));
 
   server.get("/", (req, res) => {
     res.redirect("/home");

@@ -8,12 +8,13 @@ const server = express();
 
 function startMongoServer() {
   // connect to the database
-  const mongoDbConfig = server.get("mongodb");
+  const serverConf = server.get("config");
+  const mongoDbConfig = serverConf.mongodb;
   const mongoDbConnectionString = `${mongoDbConfig.url}/${mongoDbConfig.databaseName}?retryWrites=true&w=majority`;
   mongoose
     .connect(mongoDbConnectionString, { useNewUrlParser: true })
     .then(() => {
-      if (server.get("env") !== "test") {
+      if (serverConf.env !== "test") {
         // console.log("Database connected successfully");
       }
     })
@@ -26,12 +27,7 @@ function startMongoServer() {
 
 function createServer(config) {
   // Server settings
-  server.set("env", config.env);
-  server.set("port", config.port);
-  server.set("hostname", config.hostname);
-  server.set("mongodb", config.mongodb);
-  server.set("viewDir", config.viewDir);
-  server.set("urls", config.urls);
+  server.set("config", config);
 
   // Returns middleware that parses json
   server.use(bodyParser.json());
@@ -57,21 +53,21 @@ function createServer(config) {
 }
 
 function startServer() {
-  const port = server.get("port");
-  const hostname = server.get("hostname");
+  const { port, hostname, env } = server.get("config");
 
   startMongoServer(server);
   appServer = server.listen(port, () => {
-    if (server.get("env") !== "test") {
+    if (env !== "test") {
       // eslint-disable-next-line no-console
       console.log(`Express server listening on - http://${hostname}:${port}`);
     }
   });
 }
 function closeServer() {
+  const { env } = server.get("config");
   appServer.close(() => {
     mongoose.disconnect().then(() => {
-      if (server.get("env") !== "test") {
+      if (env !== "test") {
         // eslint-disable-next-line no-console
         console.log("Database disconnected successfully");
       }
