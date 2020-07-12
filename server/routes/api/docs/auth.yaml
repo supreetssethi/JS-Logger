@@ -30,13 +30,79 @@ paths:
       responses:
         "201":
           description: User registered successfully
-          # content:
-          #   application/json:
           schema:
             type: object
             properties:
               success:
                 type: boolean
-              # username:
-              #   type: string
-              #   description: The user name.
+              token:
+                type: string
+        "500":
+          description: Error while registering
+          schema:
+            type: object
+            properties:
+              success:
+                type: boolean
+              data:
+                type: string
+  /auth/login:
+    post:
+      summary: Login existing user
+      tags: # Tag property
+        - Auth # Value of the tag
+      name:
+        - Login User
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: user credentials
+          description: The user credentials to login.
+          schema:
+            type: object
+            properties:
+              email: # <!--- form field name
+                type: string
+              password: # <!--- form field name
+                type: string
+            required:
+              - email
+              - password
+      responses:
+        "200":
+          description: User logged in  successfully
+          schema:
+            type: object
+            properties:
+              success:
+                type: boolean
+              token:
+                type: string
+        "400":
+          description: User logged in  successfully
+          schema:
+            type: object
+            properties:
+              success:
+                type: boolean
+              token:
+                type: string
+        "401":
+          description: User logged in  successfully
+          schema:
+            type: object
+            properties:
+              success:
+                type: boolean
+              token:
+                type: string
+        "500":
+          description: User logged in  successfully
+          schema:
+            type: object
+            properties:
+              success:
+                type: boolean
+              token:
+                type: string
