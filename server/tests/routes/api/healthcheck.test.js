@@ -17,10 +17,6 @@ describe("Testing health check api end point", () => {
     );
     const json = await res.json();
     expect(res.status).toEqual(200);
-    // uptime greater than 0
-    expect(json.data.uptime).toBeGreaterThan(0);
-    // status is ok
-    expect(json.data.message).toEqual("UP");
     expect(json.data.dbState).not.toEqual("disconnected");
     done();
   });

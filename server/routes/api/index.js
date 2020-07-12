@@ -21,7 +21,9 @@ const router = express.Router();
 router.use("/log", cors(corsOptionsDelegate), logRouter);
 router.use("/health", cors(corsOptionsDelegate), healthcheckRouter);
 router.use("/auth", cors(corsOptionsDelegate), authRouter);
-
+router.use("/", (eq, res) => {
+  res.status(200).json({ isSuccess: true, data: "This is api base" });
+});
 router.get("*", function pageNotFound(req, res, next) {
   res.status(404).send("ERROR");
   return next();
