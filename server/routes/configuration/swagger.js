@@ -6,8 +6,43 @@ const swaggerDefinition = {
     title: "JS-logger", // Title of the documentation
     version: "1.0.0", // Version of the app
     description: "JS-logger api documentation", // short description of the app
+    license: {
+      name: "MIT",
+      url: "https://choosealicense.com/licenses/mit/",
+    },
+    contact: {
+      name: "Supreet Sethi",
+      // url: "https://swagger.io",
+      email: "supreet.s.sethi@gmail.com",
+    },
   },
-  host: "api.logger.com:3000", // the host or url of the app
+  servers: [
+    {
+      url: "http://api.logger.com:3000",
+    },
+  ],
+  securityDefinitions: {
+    bearerAuth: {
+      type: "apiKey",
+      name: "Authorization",
+      scheme: "bearer",
+      in: "header",
+    },
+    Bearer: {
+      type: "apiKey",
+      name: "Authorization",
+      in: "header",
+    },
+    ApiKeyAuth: { type: "apiKey", in: "header", name: "X-API-Key" },
+  },
+  // security: [
+  //   {
+  //     bearerAuth: [],
+  //     Bearer: [],
+  //   },
+  // ],
+  host: "api.logger.com:3000",
+  validatorUrl: null,
 };
 
 // options for the swagger docs

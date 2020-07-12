@@ -36,17 +36,7 @@ function createServer(config) {
   // use cookie parser
   server.use(cookieParser());
 
-  // Setup view engine
-  // server.engine(".hbs", expressHandlebars({
-  //     defaultLayout: "default",
-  //     layoutsDir: config.viewDir + "/layouts",
-  //     extname: ".hbs"
-  // }));
-  // server.set("views", server.get("viewDir"));
-  // server.set("view engine", ".hbs");
-
-  // Set up routes
-
+  server.use("/public", express.static("server/public"));
   server.use(bodyParser.json());
   server.use((err, req, res, next) => {
     // eslint-disable-next-line no-console

@@ -34,7 +34,14 @@ function init(server) {
   server.use("/home", homeRoute);
 
   // use swagger-Ui-express for your app documentation endpoint
-  server.use("/docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+  server.use(
+    "/docs",
+    swaggerUi.serve,
+    swaggerUi.setup(swaggerSpec, {
+      explorer: true,
+      customCssUrl: "/public/muted-swagger.css",
+    }),
+  );
   server.get("*", (req, res, next) => {
     res.status(404).send("ERROR");
     return next();
