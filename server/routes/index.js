@@ -20,19 +20,8 @@ const handleErrors = (server) => {
     res.render("error");
   });
 };
-function init(server) {
-  const { urls } = server.get("config");
 
-  server.use(cors());
-
-  server.use(subdomain(urls.API_SUBDOMAIN, apiRoute));
-
-  server.get("/", (req, res) => {
-    res.redirect("/home");
-  });
-
-  server.use("/home", homeRoute);
-
+const swaggerSetup = (server) => {
   // use swagger-Ui-express for your app documentation endpoint
   server.use(
     "/docs",
@@ -42,10 +31,24 @@ function init(server) {
       customCssUrl: "/public/muted-swagger.css",
     }),
   );
+};
+function init(server) {
+  const { urls } = server.get("config");
+
+  server.use(cors());
+
+  server.use(subdomain(urls.API_SUBDOMAIN, apiRoute));
+
+  swaggerSetup(server);
+  server.get("/", (req, res) => {
+    res.redirect("/home");
+  });
+  server.use("/home", homeRoute);
   server.get("*", (req, res, next) => {
     res.status(404).send("ERROR");
     return next();
   });
+
   handleErrors(server);
 }
 // Handled unhandled promise rejections
