@@ -50,6 +50,7 @@
             "allowTernary": true,
             "allowTaggedTemplates": true
         }],
+        "no-underscore-dangle": "off",
         "prettier/prettier": "error" // preetier realted errors
     }
 }

@@ -20,22 +20,35 @@ const handleErrors = (server) => {
     res.render("error");
   });
 };
-function init(server) {
-  server.use(cors());
-  server.use(subdomain(server.get("urls").API_SUBDOMAIN, apiRoute));
 
+const swaggerSetup = (server) => {
+  // use swagger-Ui-express for your app documentation endpoint
+  server.use(
+    "/docs",
+    swaggerUi.serve,
+    swaggerUi.setup(swaggerSpec, {
+      explorer: true,
+      customCssUrl: "/public/muted-swagger.css",
+    }),
+  );
+};
+function init(server) {
+  const { urls } = server.get("config");
+
+  server.use(cors());
+
+  server.use(subdomain(urls.API_SUBDOMAIN, apiRoute));
+
+  swaggerSetup(server);
   server.get("/", (req, res) => {
     res.redirect("/home");
   });
-
   server.use("/home", homeRoute);
-
-  // use swagger-Ui-express for your app documentation endpoint
-  server.use("/docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
   server.get("*", (req, res, next) => {
     res.status(404).send("ERROR");
     return next();
   });
+
   handleErrors(server);
 }
 // Handled unhandled promise rejections

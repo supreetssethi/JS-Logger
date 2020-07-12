@@ -14,18 +14,17 @@
 - [ ] Setting up redux store
 - [ ] Setting up integration test case react
 - [ ] Setting up documentation for react
-- [ ] Setting up documentation for exposing api to thirdparty
+- [x] Setting up documentation for exposing api to thirdparty - api documentation (swagger-jsdoc)
 - [ ] Setting up documentation for internal api
 - [ ] Setting up a unique key for client to use application (paid)
 - [ ] Setting up a sandbox environment for testing (1 month free without key) ( free for paid user with key)
 - [ ] Setting up react app to use out internal application
 - [ ] Setting up a single line JS file usage which can directly be imported in any project to use our logger.
-- [ ] Setting up app auth mechanism (JWT preferred)
-- [ ] If some major api breaks from front end there should be a logic to check health checkup of backend and give a application down page with retrt option
+- [x] Setting up app auth mechanism (JWT preferred)
+- [ ] If some major api breaks from front end there should be a logic to check health checkup of backend and give a application down page with retry option
 - [ ] application should have responsive design
 - [ ] offline first support (PWA recommended)
 - [ ] react documentation
-- [ ] api documentation
 - [ ] usage documentation
 - [ ] user flow documentation with screenshots
 - [ ] creating a logger library for logging node js application
