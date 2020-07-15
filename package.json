@@ -17,11 +17,7 @@
     "lint:fix": "eslint ./server --fix",
     "prettier:fix": "prettier ./server --write"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
+
   "lint-staged": {
     "**/server/*.{js,json}": [
       "npm run prettier:fix",
@@ -67,7 +63,7 @@
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-prettier": "^3.1.4",
-    "husky": "^4.2.5",
+
     "jest": "^26.1.0",
     "jsdoc": "^3.6.4",
     "lint-staged": "^10.2.11",
