@@ -78,7 +78,7 @@ exports.getMe = asyncHandler(async (req, res) => {
     // check for user
     const user = await User.findById(req.user.id);
 
-    res.status(200).json({ success: false, data: user });
+    res.status(200).json({ success: true, data: user });
   } catch (ex) {
     res.status(500).json({ success: false, data: ex });
   }
